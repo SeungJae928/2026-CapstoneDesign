@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Capstone.dto.request.AdditionalInfoRequest;
+import com.example.Capstone.dto.request.TokenRefreshRequest;
+import com.example.Capstone.dto.response.TokenResponse;
+import com.example.Capstone.service.AuthService;
 import com.example.Capstone.service.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 public class AuthController {
 
     private final UserService userService;
+    private final AuthService authService;
 
     @Operation(summary = "소셜 로그인 또는 가입 처리")
     @ApiResponse(responseCode = "200", description = "로그인 성공 - JWT 반환")
@@ -50,5 +54,11 @@ public class AuthController {
     public ResponseEntity<String> success(@RequestParam String accessToken) {
         return ResponseEntity.ok(accessToken);
     }
-
+    
+    @PostMapping("/refresh")
+    @Operation(summary = "토큰 갱신", description = "Refresh Token 으로 Access Token 갱신")
+    public ResponseEntity<TokenResponse> refresh(
+            @RequestBody @Valid TokenRefreshRequest request) {
+        return ResponseEntity.ok(authService.refresh(request.refreshToken()));
+    }
 }
