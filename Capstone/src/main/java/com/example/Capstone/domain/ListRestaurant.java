@@ -7,6 +7,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 
 @Entity
@@ -67,10 +68,12 @@ public class ListRestaurant {
         this.autoScore  = calcAutoScore(tasteScore, valueScore, moodScore);
     }
 
-    // 가중합 자동 계산 (taste 40%, value 30%, mood 30%)
+    // 가중합 자동 계산 ((taste 60%, value 20%, mood 20%) * 10)
     private BigDecimal calcAutoScore(BigDecimal taste, BigDecimal value, BigDecimal mood) {
-        return taste.multiply(new BigDecimal("4.0"))
-                .add(value.multiply(new BigDecimal("3.0")))
-                .add(mood.multiply(new BigDecimal("3.0")));
+        return taste.multiply(new BigDecimal("0.6"))
+                .add(value.multiply(new BigDecimal("0.2")))
+                .add(mood.multiply(new BigDecimal("0.2")))
+                .multiply(new BigDecimal("10"))
+                .setScale(1, RoundingMode.HALF_UP);
     }
 }

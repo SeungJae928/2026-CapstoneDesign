@@ -1,6 +1,7 @@
 package com.example.Capstone.service;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,8 @@ import lombok.RequiredArgsConstructor;
 @Transactional(readOnly = true)
 public class UserListService {
 
+    private static final int MIN_RESTAURANT_COUNT = 5;
+
     private final UserListRepository userListRepository;
     private final UserRepository userRepository;
     private final RestaurantRepository restaurantRepository;
@@ -38,6 +41,13 @@ public class UserListService {
 	// 리스트 생성
 	@Transactional
     public UserListResponse createList(Long userId, CreateListRequest request) {
+        validateMinimumRestaurantCount(request.restaurants());
+        validateNoDuplicateRestaurants(request.restaurants());
+        List<Restaurant> initialRestaurants = validateAndLoadRestaurants(
+                request.regionName(),
+                request.restaurants()
+        );
+
         User user = userRepository.findByIdAndIsDeletedFalse(userId)
                 .orElseThrow(() -> new EntityNotFoundException("유저를 찾을 수 없습니다."));
 
@@ -48,7 +58,25 @@ public class UserListService {
                 .regionName(request.regionName())
                 .build();
 
-        return UserListResponse.from(userListRepository.save(userList));
+        UserList savedList = userListRepository.save(userList);
+
+        List<ListRestaurant> restaurants = new ArrayList<>();
+        for (int i = 0; i < request.restaurants().size(); i++) {
+            AddRestaurantRequest restaurantRequest = request.restaurants().get(i);
+            Restaurant restaurant = initialRestaurants.get(i);
+
+            restaurants.add(ListRestaurant.builder()
+                    .userList(savedList)
+                    .restaurant(restaurant)
+                    .tasteScore(restaurantRequest.tasteScore())
+                    .valueScore(restaurantRequest.valueScore())
+                    .moodScore(restaurantRequest.moodScore())
+                    .build());
+        }
+
+        listRestaurantRepository.saveAll(restaurants);
+
+        return UserListResponse.from(savedList);
     }
 
 	// 내 리스트 목록
@@ -106,9 +134,9 @@ public class UserListService {
     @Transactional
     public void addRestaurant(Long userId, Long listId, AddRestaurantRequest request) {
         UserList userList = getOwnedList(userId, listId);
-        Restaurant restaurant = restaurantRepository
-                .findByIdAndIsDeletedFalseAndIsHiddenFalse(request.restaurantId())
-                .orElseThrow(() -> new EntityNotFoundException("식당을 찾을 수 없습니다."));
+        validateDuplicateRestaurant(userList.getId(), request.restaurantId());
+        Restaurant restaurant = getVisibleRestaurant(request.restaurantId());
+        validateRegionMatch(userList.getRegionName(), restaurant.getRegionName());
 
         ListRestaurant listRestaurant = ListRestaurant.builder()
                 .userList(userList)
@@ -139,6 +167,7 @@ public class UserListService {
     @Transactional
     public void removeRestaurant(Long userId, Long listId, Long restaurantId) {
         getOwnedList(userId, listId);
+        validateMinimumRestaurantCountForRemoval(listId);
         ListRestaurant listRestaurant = listRestaurantRepository
                 .findByUserListIdAndRestaurantId(listId, restaurantId)
                 .orElseThrow(() -> new EntityNotFoundException("식당을 찾을 수 없습니다."));
@@ -153,5 +182,68 @@ public class UserListService {
             throw new IllegalArgumentException("리스트 소유자가 아닙니다.");
         }
         return userList;
+    }
+
+    private ListRestaurant toListRestaurant(UserList userList, AddRestaurantRequest request) {
+        Restaurant restaurant = getVisibleRestaurant(request.restaurantId());
+        validateRegionMatch(userList.getRegionName(), restaurant.getRegionName());
+
+        return ListRestaurant.builder()
+                .userList(userList)
+                .restaurant(restaurant)
+                .tasteScore(request.tasteScore())
+                .valueScore(request.valueScore())
+                .moodScore(request.moodScore())
+                .build();
+    }
+
+    private List<Restaurant> validateAndLoadRestaurants(String listRegionName, List<AddRestaurantRequest> requests) {
+        List<Restaurant> restaurants = new ArrayList<>();
+        for (AddRestaurantRequest request : requests) {
+            Restaurant restaurant = getVisibleRestaurant(request.restaurantId());
+            validateRegionMatch(listRegionName, restaurant.getRegionName());
+            restaurants.add(restaurant);
+        }
+        return restaurants;
+    }
+
+    private Restaurant getVisibleRestaurant(Long restaurantId) {
+        return restaurantRepository.findByIdAndIsDeletedFalseAndIsHiddenFalse(restaurantId)
+                .orElseThrow(() -> new EntityNotFoundException("식당을 찾을 수 없습니다."));
+    }
+
+    private void validateMinimumRestaurantCount(List<AddRestaurantRequest> restaurants) {
+        if (restaurants == null || restaurants.size() < MIN_RESTAURANT_COUNT) {
+            throw new BusinessException("리스트는 최소 5개의 식당을 포함해야 합니다.", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    private void validateNoDuplicateRestaurants(List<AddRestaurantRequest> restaurants) {
+        long uniqueRestaurantCount = restaurants.stream()
+                .map(AddRestaurantRequest::restaurantId)
+                .distinct()
+                .count();
+
+        if (uniqueRestaurantCount != restaurants.size()) {
+            throw new BusinessException("같은 리스트에 동일한 식당을 중복으로 추가할 수 없습니다.", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    private void validateDuplicateRestaurant(Long listId, Long restaurantId) {
+        if (listRestaurantRepository.findByUserListIdAndRestaurantId(listId, restaurantId).isPresent()) {
+            throw new BusinessException("같은 리스트에 동일한 식당을 중복으로 추가할 수 없습니다.", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    private void validateRegionMatch(String listRegionName, String restaurantRegionName) {
+        if (!listRegionName.equals(restaurantRegionName)) {
+            throw new BusinessException("리스트 지역과 식당 지역이 일치해야 합니다.", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    private void validateMinimumRestaurantCountForRemoval(Long listId) {
+        if (listRestaurantRepository.countByUserListId(listId) <= MIN_RESTAURANT_COUNT) {
+            throw new BusinessException("리스트는 최소 5개의 식당을 유지해야 합니다.", HttpStatus.BAD_REQUEST);
+        }
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.example.Capstone.domain.Restaurant;
 
 @Repository
-public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
+public interface RestaurantRepository extends JpaRepository<Restaurant, Long>, RestaurantRankingRepository {
     List<Restaurant> findByNameContainingAndIsDeletedFalseAndIsHiddenFalse(String keyword);
     Optional<Restaurant> findByIdAndIsDeletedFalseAndIsHiddenFalse(Long id);
 }

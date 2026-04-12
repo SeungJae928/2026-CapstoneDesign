@@ -11,5 +11,6 @@ import com.example.Capstone.domain.ListRestaurant;
 public interface ListRestaurantRepository extends JpaRepository<ListRestaurant, Long> {
     Optional<ListRestaurant> findByIdAndUserListId(Long id, Long listId);
     Optional<ListRestaurant> findByUserListIdAndRestaurantId(Long listId, Long restaurantId);
+    long countByUserListId(Long userListId);
     void deleteAllByUserListId(Long userListId);
 }
