@@ -15,23 +15,23 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.Capstone.domain.RestaurantCategory;
+import com.example.Capstone.domain.Restaurant;
 import com.example.Capstone.dto.response.ListRecommendationItemResponse;
 import com.example.Capstone.dto.response.ListRecommendationResponse;
 import com.example.Capstone.dto.response.ListRecommendationScoreDetailResponse;
 import com.example.Capstone.dto.response.RecommendationOwnerResponse;
-import com.example.Capstone.recommendation.model.ListRecommendationModels.ListRecommendationFeature;
-import com.example.Capstone.recommendation.model.ListRecommendationModels.ListRecommendationScoreComponents;
-import com.example.Capstone.recommendation.model.ListRecommendationModels.ListRecommendationUserProfile;
-import com.example.Capstone.recommendation.model.ListRecommendationModels.OwnerFeature;
-import com.example.Capstone.recommendation.model.ListRecommendationModels.ScoreVector;
+import com.example.Capstone.recommendation.model.list.ListRecommendationFeature;
+import com.example.Capstone.recommendation.model.list.ListRecommendationScoreComponents;
+import com.example.Capstone.recommendation.model.list.ListRecommendationUserProfile;
+import com.example.Capstone.recommendation.model.list.OwnerFeature;
+import com.example.Capstone.recommendation.model.list.ScoreVector;
 import com.example.Capstone.recommendation.scorer.ListRecommendationScorer;
 import com.example.Capstone.repository.ListRecommendationRepository;
 import com.example.Capstone.repository.ListRecommendationRepository.CandidateListRestaurantRow;
 import com.example.Capstone.repository.ListRecommendationRepository.CandidateListSummaryRow;
 import com.example.Capstone.repository.ListRecommendationRepository.OwnerInteractionRow;
 import com.example.Capstone.repository.ListRecommendationRepository.UserListInteractionRow;
-import com.example.Capstone.repository.RestaurantCategoryRepository;
+import com.example.Capstone.repository.RestaurantRepository;
 import com.example.Capstone.repository.UserRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -53,8 +53,8 @@ public class ListRecommendationService {
     private static final double FALLBACK_REGION_SCORE = 0.65;
 
     private final UserRepository userRepository;
+    private final RestaurantRepository restaurantRepository;
     private final ListRecommendationRepository listRecommendationRepository;
-    private final RestaurantCategoryRepository restaurantCategoryRepository;
     private final ListRecommendationScorer listRecommendationScorer;
 
     public ListRecommendationResponse getListRecommendations(Long userId) {
@@ -460,11 +460,8 @@ public class ListRecommendationService {
         }
 
         Map<Long, List<String>> categoryMap = new LinkedHashMap<>();
-        for (RestaurantCategory category : restaurantCategoryRepository
-                .findAllByRestaurantIdInOrderByRestaurantIdAscCategoryNameAsc(restaurantIds)) {
-            Long restaurantId = category.getRestaurant().getId();
-            categoryMap.computeIfAbsent(restaurantId, ignored -> new ArrayList<>())
-                    .add(category.getCategoryName());
+        for (Restaurant restaurant : restaurantRepository.findAllById(restaurantIds)) {
+            categoryMap.put(restaurant.getId(), restaurant.getCategoryNames());
         }
         return categoryMap;
     }

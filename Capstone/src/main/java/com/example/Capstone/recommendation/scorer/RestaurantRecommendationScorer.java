@@ -7,13 +7,13 @@ import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
-import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.LikedRestaurantFeature;
-import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.RecommendationScoreComponents;
-import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.RestaurantFeature;
-import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.UserPreferenceProfile;
+import com.example.Capstone.recommendation.model.restaurant.LikedRestaurantFeature;
+import com.example.Capstone.recommendation.model.restaurant.RecommendationScoreComponents;
+import com.example.Capstone.recommendation.model.restaurant.RestaurantFeature;
+import com.example.Capstone.recommendation.model.restaurant.UserPreferenceProfile;
 
 @Component
-public class RestaurantRecommendationScorer {
+public class  RestaurantRecommendationScorer {
 
     static final double USER_PREFERENCE_WEIGHT = 0.45;
     static final double CATEGORY_FIT_WEIGHT = 0.20;
