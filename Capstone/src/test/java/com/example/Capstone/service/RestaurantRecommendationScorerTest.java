@@ -10,6 +10,12 @@ import java.util.Set;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.LikedRestaurantFeature;
+import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.RecommendationScoreComponents;
+import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.RestaurantFeature;
+import com.example.Capstone.recommendation.model.RestaurantRecommendationModels.UserPreferenceProfile;
+import com.example.Capstone.recommendation.scorer.RestaurantRecommendationScorer;
+
 class RestaurantRecommendationScorerTest {
 
     private final RestaurantRecommendationScorer scorer = new RestaurantRecommendationScorer();

@@ -6,7 +6,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_DB: prod_db
-      POSTGRES_USER: prod_user
+      POSTGRES_USER:  prod_user
       POSTGRES_PASSWORD: prod_password
     volumes:
       - ./data/prod:/var/lib/postgresql/data
