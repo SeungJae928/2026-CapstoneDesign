@@ -17,6 +17,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import com.example.Capstone.client.NaverLocalSearchClient;
 import com.example.Capstone.client.PcmapSearchClient;
 import com.example.Capstone.client.PcmapSearchClient.PcmapRestaurantCandidate;
 import com.example.Capstone.domain.ListRestaurant;
@@ -47,6 +48,9 @@ class UserListServiceExternalFallbackTest {
 
     @Mock
     private PcmapSearchClient pcmapSearchClient;
+
+    @Mock
+    private NaverLocalSearchClient naverLocalSearchClient;
 
     @InjectMocks
     private UserListService userListService;

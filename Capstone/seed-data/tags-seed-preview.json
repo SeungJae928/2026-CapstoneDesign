@@ -1,261 +1,884 @@
 [
   {
     "seed_index": 1,
+    "tag_key": "menu:간짜장",
+    "tag_name": "간짜장",
+    "parent_tag_key": "menu:짜장면",
+    "is_active": true
+  },
+  {
+    "seed_index": 2,
     "tag_key": "menu:갈비",
     "tag_name": "갈비",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 2,
+    "seed_index": 3,
+    "tag_key": "menu:감자튀김",
+    "tag_name": "감자튀김",
+    "parent_tag_key": "menu:튀김",
+    "is_active": true
+  },
+  {
+    "seed_index": 4,
+    "tag_key": "menu:계란찜",
+    "tag_name": "계란찜",
+    "parent_tag_key": "menu:찜",
+    "is_active": true
+  },
+  {
+    "seed_index": 5,
     "tag_key": "menu:고로케",
     "tag_name": "고로케",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 3,
+    "seed_index": 6,
+    "tag_key": "menu:곱창",
+    "tag_name": "곱창",
+    "parent_tag_key": "menu:구이",
+    "is_active": true
+  },
+  {
+    "seed_index": 7,
+    "tag_key": "menu:구이",
+    "tag_name": "구이",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 8,
     "tag_key": "menu:국밥",
     "tag_name": "국밥",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 4,
+    "seed_index": 9,
     "tag_key": "menu:국수",
     "tag_name": "국수",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 5,
+    "seed_index": 10,
     "tag_key": "menu:규동",
     "tag_name": "규동",
     "parent_tag_key": "menu:덮밥",
     "is_active": true
   },
   {
-    "seed_index": 6,
+    "seed_index": 11,
     "tag_key": "menu:김밥",
     "tag_name": "김밥",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 7,
+    "seed_index": 12,
+    "tag_key": "menu:김치볶음밥",
+    "tag_name": "김치볶음밥",
+    "parent_tag_key": "menu:볶음밥",
+    "is_active": true
+  },
+  {
+    "seed_index": 13,
+    "tag_key": "menu:김치찌개",
+    "tag_name": "김치찌개",
+    "parent_tag_key": "menu:찌개",
+    "is_active": true
+  },
+  {
+    "seed_index": 14,
+    "tag_key": "menu:까르보나라",
+    "tag_name": "까르보나라",
+    "parent_tag_key": "menu:파스타",
+    "is_active": true
+  },
+  {
+    "seed_index": 15,
+    "tag_key": "menu:깐풍기",
+    "tag_name": "깐풍기",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 16,
+    "tag_key": "menu:꿔바로우",
+    "tag_name": "꿔바로우",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 17,
+    "tag_key": "menu:내장탕",
+    "tag_name": "내장탕",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 18,
     "tag_key": "menu:냉면",
     "tag_name": "냉면",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 8,
+    "seed_index": 19,
+    "tag_key": "menu:단팥빵",
+    "tag_name": "단팥빵",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 20,
+    "tag_key": "menu:닭발",
+    "tag_name": "닭발",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 21,
+    "tag_key": "menu:닭볶음탕",
+    "tag_name": "닭볶음탕",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 22,
+    "tag_key": "menu:대추차",
+    "tag_name": "대추차",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 23,
     "tag_key": "menu:덮밥",
     "tag_name": "덮밥",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 9,
+    "seed_index": 24,
     "tag_key": "menu:돈까스",
     "tag_name": "돈까스",
     "parent_tag_key": "menu:카츠",
     "is_active": true
   },
   {
-    "seed_index": 10,
+    "seed_index": 25,
+    "tag_key": "menu:돌체라떼",
+    "tag_name": "돌체라떼",
+    "parent_tag_key": "menu:라떼",
+    "is_active": true
+  },
+  {
+    "seed_index": 26,
+    "tag_key": "menu:된장찌개",
+    "tag_name": "된장찌개",
+    "parent_tag_key": "menu:찌개",
+    "is_active": true
+  },
+  {
+    "seed_index": 27,
+    "tag_key": "menu:딸기라떼",
+    "tag_name": "딸기라떼",
+    "parent_tag_key": "menu:라떼",
+    "is_active": true
+  },
+  {
+    "seed_index": 28,
+    "tag_key": "menu:떡국",
+    "tag_name": "떡국",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 29,
     "tag_key": "menu:떡볶이",
     "tag_name": "떡볶이",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 11,
+    "seed_index": 30,
+    "tag_key": "menu:라떼",
+    "tag_name": "라떼",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 31,
     "tag_key": "menu:라멘",
     "tag_name": "라멘",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 12,
+    "seed_index": 32,
+    "tag_key": "menu:라면",
+    "tag_name": "라면",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 33,
+    "tag_key": "menu:레몬에이드",
+    "tag_name": "레몬에이드",
+    "parent_tag_key": "menu:에이드",
+    "is_active": true
+  },
+  {
+    "seed_index": 34,
+    "tag_key": "menu:마라탕",
+    "tag_name": "마라탕",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 35,
+    "tag_key": "menu:막걸리",
+    "tag_name": "막걸리",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 36,
     "tag_key": "menu:막국수",
     "tag_name": "막국수",
     "parent_tag_key": "menu:국수",
     "is_active": true
   },
   {
-    "seed_index": 13,
+    "seed_index": 37,
+    "tag_key": "menu:막창",
+    "tag_name": "막창",
+    "parent_tag_key": "menu:구이",
+    "is_active": true
+  },
+  {
+    "seed_index": 38,
     "tag_key": "menu:만두",
     "tag_name": "만두",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 14,
+    "seed_index": 39,
     "tag_key": "menu:만둣국",
     "tag_name": "만둣국",
     "parent_tag_key": "menu:만두",
     "is_active": true
   },
   {
-    "seed_index": 15,
+    "seed_index": 40,
+    "tag_key": "menu:말차라떼",
+    "tag_name": "말차라떼",
+    "parent_tag_key": "menu:라떼",
+    "is_active": true
+  },
+  {
+    "seed_index": 41,
     "tag_key": "menu:맥주",
     "tag_name": "맥주",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 16,
+    "seed_index": 42,
+    "tag_key": "menu:메밀전병",
+    "tag_name": "메밀전병",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 43,
     "tag_key": "menu:물회",
     "tag_name": "물회",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 17,
+    "seed_index": 44,
+    "tag_key": "menu:바닐라라떼",
+    "tag_name": "바닐라라떼",
+    "parent_tag_key": "menu:라떼",
+    "is_active": true
+  },
+  {
+    "seed_index": 45,
+    "tag_key": "menu:버거",
+    "tag_name": "버거",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 46,
+    "tag_key": "menu:보쌈",
+    "tag_name": "보쌈",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 47,
+    "tag_key": "menu:볶음밥",
+    "tag_name": "볶음밥",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 48,
+    "tag_key": "menu:부대찌개",
+    "tag_name": "부대찌개",
+    "parent_tag_key": "menu:찌개",
+    "is_active": true
+  },
+  {
+    "seed_index": 49,
     "tag_key": "menu:비빔밥",
     "tag_name": "비빔밥",
     "parent_tag_key": "menu:덮밥",
     "is_active": true
   },
   {
-    "seed_index": 18,
+    "seed_index": 50,
+    "tag_key": "menu:사천탕수육",
+    "tag_name": "사천탕수육",
+    "parent_tag_key": "menu:탕수육",
+    "is_active": true
+  },
+  {
+    "seed_index": 51,
     "tag_key": "menu:사케동",
     "tag_name": "사케동",
     "parent_tag_key": "menu:덮밥",
     "is_active": true
   },
   {
-    "seed_index": 19,
+    "seed_index": 52,
+    "tag_key": "menu:삼겹살",
+    "tag_name": "삼겹살",
+    "parent_tag_key": "menu:구이",
+    "is_active": true
+  },
+  {
+    "seed_index": 53,
+    "tag_key": "menu:새우볶음밥",
+    "tag_name": "새우볶음밥",
+    "parent_tag_key": "menu:볶음밥",
+    "is_active": true
+  },
+  {
+    "seed_index": 54,
+    "tag_key": "menu:새우튀김",
+    "tag_name": "새우튀김",
+    "parent_tag_key": "menu:튀김",
+    "is_active": true
+  },
+  {
+    "seed_index": 55,
+    "tag_key": "menu:샌드위치",
+    "tag_name": "샌드위치",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 56,
+    "tag_key": "menu:샐러드",
+    "tag_name": "샐러드",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 57,
     "tag_key": "menu:샤브샤브",
     "tag_name": "샤브샤브",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 20,
+    "seed_index": 58,
+    "tag_key": "menu:소금빵",
+    "tag_name": "소금빵",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 59,
     "tag_key": "menu:소바",
     "tag_name": "소바",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 21,
+    "seed_index": 60,
+    "tag_key": "menu:소주",
+    "tag_name": "소주",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 61,
+    "tag_key": "menu:수육",
+    "tag_name": "수육",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 62,
+    "tag_key": "menu:순대",
+    "tag_name": "순대",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 63,
     "tag_key": "menu:순대국",
     "tag_name": "순대국",
     "parent_tag_key": "menu:국밥",
     "is_active": true
   },
   {
-    "seed_index": 22,
+    "seed_index": 64,
+    "tag_key": "menu:순두부",
+    "tag_name": "순두부",
+    "parent_tag_key": "menu:찌개",
+    "is_active": true
+  },
+  {
+    "seed_index": 65,
+    "tag_key": "menu:술국",
+    "tag_name": "술국",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 66,
     "tag_key": "menu:스테이크",
     "tag_name": "스테이크",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 23,
+    "seed_index": 67,
     "tag_key": "menu:쌀국수",
     "tag_name": "쌀국수",
     "parent_tag_key": "menu:국수",
     "is_active": true
   },
   {
-    "seed_index": 24,
+    "seed_index": 68,
+    "tag_key": "menu:아구찜",
+    "tag_name": "아구찜",
+    "parent_tag_key": "menu:찜",
+    "is_active": true
+  },
+  {
+    "seed_index": 69,
+    "tag_key": "menu:아메리카노",
+    "tag_name": "아메리카노",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 70,
+    "tag_key": "menu:아샷추",
+    "tag_name": "아샷추",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 71,
+    "tag_key": "menu:아이스티",
+    "tag_name": "아이스티",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 72,
+    "tag_key": "menu:아인슈페너",
+    "tag_name": "아인슈페너",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 73,
+    "tag_key": "menu:아포카토",
+    "tag_name": "아포카토",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 74,
+    "tag_key": "menu:야채튀김",
+    "tag_name": "야채튀김",
+    "parent_tag_key": "menu:튀김",
+    "is_active": true
+  },
+  {
+    "seed_index": 75,
+    "tag_key": "menu:양꼬치",
+    "tag_name": "양꼬치",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 76,
+    "tag_key": "menu:양장피",
+    "tag_name": "양장피",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 77,
+    "tag_key": "menu:어묵탕",
+    "tag_name": "어묵탕",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 78,
+    "tag_key": "menu:에스프레소",
+    "tag_name": "에스프레소",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 79,
+    "tag_key": "menu:에이드",
+    "tag_name": "에이드",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 80,
+    "tag_key": "menu:오므라이스",
+    "tag_name": "오므라이스",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 81,
+    "tag_key": "menu:오소리감투",
+    "tag_name": "오소리감투",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 82,
+    "tag_key": "menu:오징어튀김",
+    "tag_name": "오징어튀김",
+    "parent_tag_key": "menu:튀김",
+    "is_active": true
+  },
+  {
+    "seed_index": 83,
     "tag_key": "menu:와플",
     "tag_name": "와플",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 25,
+    "seed_index": 84,
     "tag_key": "menu:우동",
     "tag_name": "우동",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 26,
+    "seed_index": 85,
+    "tag_key": "menu:유린기",
+    "tag_name": "유린기",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 86,
+    "tag_key": "menu:육개장",
+    "tag_name": "육개장",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 87,
     "tag_key": "menu:육회",
     "tag_name": "육회",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 27,
+    "seed_index": 88,
+    "tag_key": "menu:자몽에이드",
+    "tag_name": "자몽에이드",
+    "parent_tag_key": "menu:에이드",
+    "is_active": true
+  },
+  {
+    "seed_index": 89,
+    "tag_key": "menu:잡채밥",
+    "tag_name": "잡채밥",
+    "parent_tag_key": "menu:덮밥",
+    "is_active": true
+  },
+  {
+    "seed_index": 90,
     "tag_key": "menu:장어",
     "tag_name": "장어",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 28,
+    "seed_index": 91,
     "tag_key": "menu:장칼국수",
     "tag_name": "장칼국수",
     "parent_tag_key": "menu:국수",
     "is_active": true
   },
   {
-    "seed_index": 29,
+    "seed_index": 92,
+    "tag_key": "menu:제육",
+    "tag_name": "제육",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 93,
+    "tag_key": "menu:족발",
+    "tag_name": "족발",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 94,
+    "tag_key": "menu:주먹밥",
+    "tag_name": "주먹밥",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 95,
+    "tag_key": "menu:지삼선",
+    "tag_name": "지삼선",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 96,
+    "tag_key": "menu:짜장면",
+    "tag_name": "짜장면",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 97,
     "tag_key": "menu:짬뽕",
     "tag_name": "짬뽕",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 30,
+    "seed_index": 98,
+    "tag_key": "menu:쫄면",
+    "tag_name": "쫄면",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 99,
+    "tag_key": "menu:쭈꾸미",
+    "tag_name": "쭈꾸미",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 100,
+    "tag_key": "menu:찌개",
+    "tag_name": "찌개",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 101,
+    "tag_key": "menu:청하",
+    "tag_name": "청하",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 102,
     "tag_key": "menu:초밥",
     "tag_name": "초밥",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 31,
+    "seed_index": 103,
+    "tag_key": "menu:초코라떼",
+    "tag_name": "초코라떼",
+    "parent_tag_key": "menu:라떼",
+    "is_active": true
+  },
+  {
+    "seed_index": 104,
     "tag_key": "menu:치킨",
     "tag_name": "치킨",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 32,
+    "seed_index": 105,
     "tag_key": "menu:카츠",
     "tag_name": "카츠",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 33,
+    "seed_index": 106,
     "tag_key": "menu:카츠동",
     "tag_name": "카츠동",
     "parent_tag_key": "menu:덮밥",
     "is_active": true
   },
   {
-    "seed_index": 34,
+    "seed_index": 107,
+    "tag_key": "menu:카페라떼",
+    "tag_name": "카페라떼",
+    "parent_tag_key": "menu:라떼",
+    "is_active": true
+  },
+  {
+    "seed_index": 108,
+    "tag_key": "menu:카페모카",
+    "tag_name": "카페모카",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 109,
+    "tag_key": "menu:카푸치노",
+    "tag_name": "카푸치노",
+    "parent_tag_key": "menu:커피",
+    "is_active": true
+  },
+  {
+    "seed_index": 110,
     "tag_key": "menu:칼국수",
     "tag_name": "칼국수",
     "parent_tag_key": "menu:국수",
     "is_active": true
   },
   {
-    "seed_index": 35,
+    "seed_index": 111,
+    "tag_key": "menu:커피",
+    "tag_name": "커피",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 112,
+    "tag_key": "menu:크림새우",
+    "tag_name": "크림새우",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 113,
+    "tag_key": "menu:크림치즈볼",
+    "tag_name": "크림치즈볼",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 114,
+    "tag_key": "menu:타코",
+    "tag_name": "타코",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 115,
+    "tag_key": "menu:탕수육",
+    "tag_name": "탕수육",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 116,
+    "tag_key": "menu:텐동",
+    "tag_name": "텐동",
+    "parent_tag_key": "menu:덮밥",
+    "is_active": true
+  },
+  {
+    "seed_index": 117,
+    "tag_key": "menu:토종순대",
+    "tag_name": "토종순대",
+    "parent_tag_key": "menu:순대",
+    "is_active": true
+  },
+  {
+    "seed_index": 118,
+    "tag_key": "menu:튀김",
+    "tag_name": "튀김",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 119,
     "tag_key": "menu:파스타",
     "tag_name": "파스타",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 36,
+    "seed_index": 120,
+    "tag_key": "menu:포케",
+    "tag_name": "포케",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 121,
     "tag_key": "menu:피자",
     "tag_name": "피자",
     "parent_tag_key": null,
     "is_active": true
   },
   {
-    "seed_index": 37,
+    "seed_index": 122,
     "tag_key": "menu:하이볼",
     "tag_name": "하이볼",
     "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 123,
+    "tag_key": "menu:해물찜",
+    "tag_name": "해물찜",
+    "parent_tag_key": "menu:찜",
+    "is_active": true
+  },
+  {
+    "seed_index": 124,
+    "tag_key": "menu:해장국",
+    "tag_name": "해장국",
+    "parent_tag_key": null,
+    "is_active": true
+  },
+  {
+    "seed_index": 125,
+    "tag_key": "menu:황태해장국",
+    "tag_name": "황태해장국",
+    "parent_tag_key": "menu:해장국",
+    "is_active": true
+  },
+  {
+    "seed_index": 126,
+    "tag_key": "menu:후라이드",
+    "tag_name": "후라이드",
+    "parent_tag_key": "menu:치킨",
     "is_active": true
   }
 ]
