@@ -108,8 +108,8 @@ class RestaurantControllerTest {
                         List.of("Chinese"),
                         List.of(new RestaurantTagResponse(
                                 10L,
-                                "facility:parking",
-                                "parking",
+                                "menu:\uD0D5\uC218\uC721",
+                                "\uD0D5\uC218\uC721",
                                 null,
                                 true,
                                 1
@@ -136,7 +136,7 @@ class RestaurantControllerTest {
                 .andExpect(jsonPath("$.currentBusinessStatus.isOpen").value(true))
                 .andExpect(jsonPath("$.primaryCategoryName").value("Chinese"))
                 .andExpect(jsonPath("$.photos[0].imageUrl").value("https://example.com/restaurant.jpg"))
-                .andExpect(jsonPath("$.additionalInfoTags[0].tagName").value("parking"))
+                .andExpect(jsonPath("$.additionalInfoTags[0].tagName").value("\uD0D5\uC218\uC721"))
                 .andExpect(jsonPath("$.menus[0].menuName").value("Jajangmyeon"))
                 .andExpect(jsonPath("$.menus[0].priceText").value("7,500"));
     }
