@@ -26,7 +26,7 @@ public class ReliabilityScore {
     private Double score = 42.0;
 
     @Column(nullable = false, length = 20)
-    private String grade = "새싹";
+    private String grade = "tier1";
 
     @Column(length = 30)
     private String honorTitle;
@@ -52,7 +52,7 @@ public class ReliabilityScore {
     private ReliabilityScore(User user) {
         this.user           = user;
         this.score          = 20.0;
-        this.grade          = "새싹";
+        this.grade          = "tier1";
         this.honorTitle     = null;
         this.honorPeriod    = null;
         this.activityIndex  = 0.0;
